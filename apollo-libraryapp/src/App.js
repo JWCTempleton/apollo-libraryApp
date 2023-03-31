@@ -5,11 +5,11 @@ import Authors from "./components/Authors";
 import Home from "./components/Home";
 import { ALL_AUTHORS, ALL_BOOKS } from "./queries";
 import Books from "./components/Books";
+import Footer from "./components/Footer";
 
 function App() {
   const authorResult = useQuery(ALL_AUTHORS);
   const bookResult = useQuery(ALL_BOOKS);
-  console.log("books", bookResult);
 
   const padding = {
     padding: 5,
@@ -43,9 +43,7 @@ function App() {
         <Route path="/" element={<Home />} />
       </Routes>
 
-      <div>
-        <i>Library app, JWCT Designs 2023</i>
-      </div>
+      <Footer />
     </Router>
   );
 }

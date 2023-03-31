@@ -8,7 +8,7 @@ const Authors = ({ authors }) => {
             Name: <b>{author.name}</b>
           </p>
           <p>
-            Born: <b>{author.born}</b>
+            Born: <b>{author.born ? author.born : "No known birthyear"}</b>
           </p>
           <p>
             Book Count: <b>{author.bookCount}</b>
