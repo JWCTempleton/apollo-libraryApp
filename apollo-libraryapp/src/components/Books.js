@@ -17,6 +17,12 @@ const Books = ({ books }) => {
             <p>
               Published: <b>{book.published}</b>
             </p>
+            {book.genres && (
+              <p>
+                {/* Genre: <b>{book.genres ? book.genres.join(", ") : ""}</b> */}
+                Genre: <b>{book.genres.join(", ")}</b>
+              </p>
+            )}
           </div>
         );
       })}
