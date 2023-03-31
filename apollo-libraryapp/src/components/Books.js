@@ -17,7 +17,7 @@ const Books = ({ books }) => {
             <p>
               Published: <b>{book.published}</b>
             </p>
-            {book.genres && (
+            {book.genres.length !== 0 && (
               <p>
                 {/* Genre: <b>{book.genres ? book.genres.join(", ") : ""}</b> */}
                 Genre: <b>{book.genres.join(", ")}</b>
