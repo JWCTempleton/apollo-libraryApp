@@ -1,7 +1,10 @@
+import BookForm from "./BookForm";
+
 const Books = ({ books }) => {
   return (
     <div>
       <h2>Books</h2>
+      <BookForm />
       {books.map((book) => {
         return (
           <div key={book.id} style={{ padding: "12px 0px" }}>
