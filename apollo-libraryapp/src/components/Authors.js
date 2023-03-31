@@ -3,7 +3,7 @@ const Authors = ({ authors }) => {
     <div>
       <h1>Authors</h1>
       {authors.map((author) => (
-        <div style={{ padding: "12px 0px" }}>
+        <div key={author.id} style={{ padding: "12px 0px" }}>
           <p>
             Name: <b>{author.name}</b>
           </p>

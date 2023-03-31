@@ -6,6 +6,18 @@ export const ALL_AUTHORS = gql`
       name
       bookCount
       born
+      id
+    }
+  }
+`;
+
+export const ALL_BOOKS = gql`
+  query {
+    allBooks {
+      author
+      published
+      title
+      id
     }
   }
 `;

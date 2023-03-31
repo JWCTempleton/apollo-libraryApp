@@ -3,15 +3,18 @@ import { useQuery } from "@apollo/client";
 import "./App.css";
 import Authors from "./components/Authors";
 import Home from "./components/Home";
-import { ALL_AUTHORS } from "./queries";
+import { ALL_AUTHORS, ALL_BOOKS } from "./queries";
+import Books from "./components/Books";
 
 function App() {
-  const result = useQuery(ALL_AUTHORS);
+  const authorResult = useQuery(ALL_AUTHORS);
+  const bookResult = useQuery(ALL_BOOKS);
+  console.log("books", bookResult);
 
   const padding = {
     padding: 5,
   };
-  if (result.loading) {
+  if (authorResult.loading || bookResult.loading) {
     return <div>Loading...</div>;
   }
 
@@ -24,11 +27,18 @@ function App() {
         <Link style={padding} to="/authors">
           authors
         </Link>
+        <Link style={padding} to="/books">
+          books
+        </Link>
       </div>
       <Routes>
         <Route
           path="/authors"
-          element={<Authors authors={result.data.allAuthors} />}
+          element={<Authors authors={authorResult.data.allAuthors} />}
+        />
+        <Route
+          path="/books"
+          element={<Books books={bookResult.data.allBooks} />}
         />
         <Route path="/" element={<Home />} />
       </Routes>
