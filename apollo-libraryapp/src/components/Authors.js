@@ -1,8 +1,12 @@
+import AuthorBirthForm from "./AuthorBirthForm";
+import "./Authors.css";
+
 const Authors = ({ authors }) => {
   return (
     <div>
       <h1>Authors</h1>
-      {authors.map((author) => (
+      <AuthorBirthForm />
+      {/* {authors.map((author) => (
         <div key={author.id} style={{ padding: "12px 0px" }}>
           <p>
             Name: <b>{author.name}</b>
@@ -14,7 +18,23 @@ const Authors = ({ authors }) => {
             Book Count: <b>{author.bookCount}</b>
           </p>
         </div>
-      ))}
+      ))} */}
+      <table id="authors">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Born</th>
+            <th>Book Count</th>
+          </tr>
+          {authors.map((author) => (
+            <tr key={author.id}>
+              <td>{author.name}</td>
+              <td>{author.born}</td>
+              <td>{author.bookCount}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

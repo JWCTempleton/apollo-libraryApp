@@ -29,7 +29,6 @@ const BookForm = () => {
     event.preventDefault();
     setGenres(genres.concat(newGenres));
     setNewGenres("");
-    console.log("genres", genres);
   };
 
   return (
